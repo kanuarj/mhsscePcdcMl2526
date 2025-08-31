@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Titanic Project</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style>
+    
+      body {
+          background-color: #333 ;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark text-white">
+        <h3>Titanic Passenger Survived System</h3>
+    </nav>
+    
+
+    <div class="container p-3 my-3 bg-secondary text-white">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, i in messages %}
+                    <div class="alert alert-{{category}}">
+                        {{i}}
+                    </div>
+                {% endfor %}
+            {% endif %}
+      {% endwith %}
+    <form class="form-group" action="/" method="POST">
+      <label for="passclass">Passenger Class :</label>
+      <input list="Passenger" name="passs" id="passclass" class="form-control">
+        <datalist id="Passenger" class="dropdown-menu">
+            <option value="1" class="dropdown-item">
+            <option value="2" class="dropdown-item">
+            <option value="3" class="dropdown-item">
+        </datalist><br>
+      <label for="age">Age :</label>
+      <input class="form-control" type="number" name="age"><br>
+      <input type="radio" id="male" name="gender" value="1">
+      <label for="1">Male</label><br>
+        <input type="radio" id="female" name="gender" value="0">
+        <label for="0">Female</label>
+    </br>
+      <button class="btn btn-dark" type="submit">Submit</button>
+    </form>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <img class="card-img-top" src="https://live.staticflickr.com/3397/3279461836_078feb313b_b.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Titanic Passenger Survival Classification</h5>
+              <p class="card-text">The RMS Titanic was a British passenger liner that sank in the North Atlantic Ocean in the early morning hours of 15 April 1912, after it collided with an iceberg during its maiden voyage from Southampton to New York City. There were an estimated 2,224 passengers and crew aboard the ship, and more than 1,500 died, making it one of the deadliest commercial peacetime maritime disasters in modern history. The RMS Titanic was the largest ship afloat at the time it entered service and was the second of three Olympic-class ocean liners operated by the White Star Line. The Titanic was built by the Harland and Wolff shipyard in Belfast. Thomas Andrews, her architect, died in the disaster.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer footer-dark bg-dark text-white">
+      <div class="footer-copyright text-center py-3">© Raunak Joshi</div>
+    </footer>
+</body>
+</html>
